@@ -1,14 +1,12 @@
-const panels = document.querySelectorAll(".panel"); 
+const open_btn  = document.querySelector(".open-btn");
+const close_btn = document.querySelector(".close-btn");
+const nav       = document.querySelectorAll(".nav"); 
 
-panels.forEach((panel)=> {
-    panel.addEventListener("mouseover", () => {
-        removeActiveClasses(); 
-        panel.classList.add("active")
-    })
+
+open_btn.addEventListener("click", ()=> {
+    nav.forEach(nav_el => nav_el.classList.add("visible"))
 })
 
-function removeActiveClasses(){
-    panels.forEach((panel) => {
-        panel.classList.remove("active"); 
-    })
-}
+close_btn.addEventListener("click", ()=> {
+    nav.forEach(nav_el => nav_el.classList.remove("visible"))
+})
